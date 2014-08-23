@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## This function aim to get the inverse of matrix.
+## First function trys to get the original matrix. 
+## Second function trys to get the inverse matrix 
+## and return the inverse matrix. 
 
 makeCacheMatrix <- function(x = matrix()) {
 
