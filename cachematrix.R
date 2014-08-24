@@ -3,6 +3,10 @@
 ## Second function trys to get the inverse matrix 
 ## and return the inverse matrix. 
 
+## "makeCacheMatrix" can input the matrix
+## , call the function "cacheSolve"
+## and create a data list for "cacheSolve".
+## The function "cacheSolve" get the inverse matrix.
 makeCacheMatrix <- function(x = matrix()) {
        m <- NULL
        set <- function(y){
@@ -25,7 +29,7 @@ cacheSolve <- function(x, ...) {
         m <- x$getmatrix()
         ##if(!is.null(m)&& m == m) make sure 
         ##the matrix is the same as you want
-        if(!is.null(m)&& m ==m) {
+        if(!is.null(m)&& m == m) {
                 message("getting cached data")
                 return(m)
         }
