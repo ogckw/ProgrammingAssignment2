@@ -16,10 +16,15 @@ makeCacheMatrix <- function(x = matrix()) {
             setmatrix = setmatrix,
             getmatrix = getmatrix)
 }
-## To cahche a inverse and return answer
+## To cahche a inverse and return answer.
+## if the inverse has been calculated,
+## just gets from cached data(list).
+## if not,just calculate it.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         m <- x$getmatrix()
+        ##if(!is.null(m)&& m == m) make sure 
+        ##the matrix is the same as you want
         if(!is.null(m)&& m ==m) {
                 message("getting cached data")
                 return(m)
