@@ -4,12 +4,29 @@
 ## and return the inverse matrix. 
 
 makeCacheMatrix <- function(x = matrix()) {
-
+       m <- NULL
+       set <- function(y){
+               x <<- y
+               m <<- NULL
+       }
+        get <- function() x
+        setmatrix <- function(solve) m <<- solve
+        getmatrix <- function() m
+       list(set = set, get = get,
+            setmatrix = setmatrix,
+            getmatrix = getmatrix)
 }
-
-
-## Write a short comment describing this function
-
+## To cahche a inverse and return answer
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+        m <- x$getmatrix()
+        if(!is.null(m)&& m ==m) {
+                message("getting cached data")
+                return(m)
+        }
+        data <- x$get()
+        m <- solve(data, ...)
+        x$setmatrix(m)
+        m
 }
+
